@@ -5,12 +5,38 @@
   <style>
     body {
       font-family: 'Arial Rounded MT Bold', sans-serif;
-      background: linear-gradient(to right, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #8b00ff);
+      background: #000000; /* Initial background color */
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
       margin: 0;
+      overflow: hidden; /* Prevent scrollbars on body */
+      animation: rainbowBackground 10s linear infinite; /* Animation */
+    }
+
+    @keyframes rainbowBackground {
+      0% {
+        background: #ff0000;
+      }
+      17% {
+        background: #ff7f00;
+      }
+      33% {
+        background: #ffff00;
+      }
+      50% {
+        background: #00ff00;
+      }
+      67% {
+        background: #0000ff;
+      }
+      83% {
+        background: #8b00ff;
+      }
+      100% {
+        background: #ff0000;
+      }
     }
 
     h1 {
@@ -23,9 +49,15 @@
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      width: 600px; /* Adjust width for narrower sections */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
+      width: 600px;
       text-align: center;
+      transition: transform 0.2s ease; /* Transition for hover effect */
+    }
+
+    .game-container:hover {
+      transform: scale(1.05); /* Expand on hover */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
     }
 
     .game-title {
